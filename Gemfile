@@ -14,7 +14,7 @@ group :development, :test do
   gem 'faker'
   gem 'rspec-rails', '~> 3.0'
   gem 'pry-rails'
-  gem 'shoulda'
+  gem 'shoulda-matchers', '~> 3.1', require: false
   gem 'valid_attribute'
 end
 
