@@ -7,4 +7,5 @@ class Catch < ActiveRecord::Base
   validates :lure_id, presence: true
   validates :fish_type_id, presence: true
   validates :zipcode, presence: true, length: { is: 5 }, numericality: { only_integer: true }
+  validates :caught_at, presence: true
 end
