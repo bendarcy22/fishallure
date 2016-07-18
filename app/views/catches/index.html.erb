@@ -1,0 +1,11 @@
+<h2>Most Recent Catches</h2>
+
+  <% @catches.each do |c| %>
+  <ul>
+    <li><%= link_to c.caught_at %></li>
+    <ul>
+      <li><%= link_to c.lure.name %></li>
+      <li><%= link_to c.fish_type.name %></li>
+    </ul>
+  </ul>
+  <% end %>

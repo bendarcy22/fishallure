@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 20160718131628) do
     t.integer  "lure_id",      null: false
     t.integer  "fish_type_id", null: false
     t.string   "zipcode",      null: false
-    t.datetime "caught_at"
+    t.datetime "caught_at",    null: false
   end
 
   create_table "categories", force: :cascade do |t|
