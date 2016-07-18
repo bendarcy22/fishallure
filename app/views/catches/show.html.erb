@@ -1,0 +1,18 @@
+
+<div class="user-info">
+  <ul>
+    <li><%= @catch.user.username %></li>
+    <li><%= @catch.caught_at %></li>
+    <li><%= @catch.zipcode %></li>
+  </ul>
+</div>
+<div class="catch-info">
+  <ul>
+    <li><%= @catch.fish_type.name %></li>
+  </ul>
+  <ul>
+    <li><%= @catch.lure.name %></li>
+    <li><%= @catch.lure.manufacturer %></li>
+    <li><%= @catch.lure.category.name %></li>
+  </ul>
+</div>

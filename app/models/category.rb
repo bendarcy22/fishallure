@@ -3,5 +3,5 @@ class Category < ActiveRecord::Base
   has_many :catches
   has_many :catches, through: :lures
 
-  validates :type, presence: true
+  validates :name, presence: true
 end

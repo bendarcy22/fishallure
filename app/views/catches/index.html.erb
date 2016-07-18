@@ -2,7 +2,7 @@
 
   <% @catches.each do |c| %>
   <ul>
-    <li><%= link_to c.caught_at %></li>
+    <li><%= link_to c.caught_at, catch_path(c) %></li>
     <ul>
       <li><%= link_to c.lure.name %></li>
       <li><%= link_to c.fish_type.name %></li>

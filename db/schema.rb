@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 20160718131628) do
   end
 
   create_table "categories", force: :cascade do |t|
-    t.string "type", null: false
+    t.string "name", null: false
   end
 
   create_table "fish_types", force: :cascade do |t|
