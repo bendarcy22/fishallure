@@ -1,10 +1,20 @@
 <h2>Report what you caught here!</h2>
 
 <div class="row large-6 columns ">
-  <% form_for @catch do |f| %>
-  
-  <%= f.label :zipcode , "Zip Code" %>
+  <%= form_for @catch do |f| %>
+
+  <%= f.label :lure, "Lure" %>
+  <%= f.select(:lure, Lure.all.collect {|lure| [ lure.name, lure.id ] }, :prompt => "Select a Lure") %>
+
+  <%= f.label :fish_type, "Fish" %>
+  <%= f.select(:fish_type, FishType.all.collect {|fish| [ fish.name, fish.id ] }, :prompt => "Select a Fish") %>
+
+  <%= f.label :zipcode, "Zip Code" %>
   <%= f.text_field :zipcode %>
+
+  <%= f.label :caught_at, "Caught at:" %>
+  <%= f.datetime_select :caught_at %>
+
 
   <%= f.submit "Report it!"%>
   <% end %>

@@ -1,4 +1,7 @@
 class Catch < ActiveRecord::Base
+  extend TimeSplitter::Accessors
+  split_accessor :caught_at
+
   belongs_to :user
   belongs_to :lure
   belongs_to :fish_type
