@@ -3,6 +3,7 @@
     <ul class="menu">
       <li class="menu-text"><%= link_to "FishAllure", root_path %></li>
       <li class="nav-buttons"><%= link_to "Recent Catches", catches_path %></li>
+      <li class="nav-buttons"><%= link_to "Hot Lures", hot_lures_path %></li>
       <% if user_signed_in? %>
         <li class="nav-buttons"><%= link_to "Edit Profile", edit_user_registration_path %></li>
         <li class="nav-buttons"><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></li>

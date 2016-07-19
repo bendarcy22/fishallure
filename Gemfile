@@ -10,6 +10,7 @@ gem 'devise'
 
 group :development, :test do
   gem 'capybara'
+  gem 'orderly'
   gem 'factory_girl_rails'
   gem 'faker'
   gem 'rspec-rails', '~> 3.0'
