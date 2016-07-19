@@ -8,4 +8,9 @@ Rails.application.routes.draw do
       get 'hot'
     end
   end
+  resources :fish_types do
+    collection do
+      get 'hot'
+    end
+  end
 end
