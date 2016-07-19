@@ -1,0 +1,11 @@
+<h2>Report what you caught here!</h2>
+
+<div class="row large-6 columns ">
+  <% form_for @catch do |f| %>
+  
+  <%= f.label :zipcode , "Zip Code" %>
+  <%= f.text_field :zipcode %>
+
+  <%= f.submit "Report it!"%>
+  <% end %>
+</div>
