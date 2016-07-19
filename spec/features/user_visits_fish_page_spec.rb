@@ -6,10 +6,10 @@ require 'rails_helper'
 #   So I can understand where the fish is being caught and what fishs are working best to catch it
 #
 #   Happy Path:
-#     [ ] I can click on the fish's name from either a reported catch post or from the list of fish
-#     [ ] The page shows me a brief description of the fish (where it is typically found, what it eats)
+#     [X] I can click on the fish's name from either a reported catch post or from the list of fish
+#     [X] The page shows me a brief description of the fish (where it is typically found, what it eats)
 #     [ ] The page shows me a picture of the fish (if available)
-#     [ ] The page shows me what lures are working well to catch the fish
+#     [X] The page shows me what lures are working well to catch the fish
 #     [ ] The page shows me where this fish has been caught over the past week
 
 feature "user sees individual fishs page" do
