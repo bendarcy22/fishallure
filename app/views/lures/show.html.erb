@@ -1,0 +1,9 @@
+<h2><%= @lure.name %></h2>
+<h4><%= @lure.manufacturer %></h4>
+
+<h5><%= @lure.category.name %></h5>
+<h5><%= @lure.description %></h5>
+
+<% @lure.fish_types.each do |fish| %>
+  <h5><%= fish.name %></h5>
+<% end %>

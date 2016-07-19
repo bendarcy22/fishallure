@@ -4,8 +4,8 @@
   <ul>
     <li><%= link_to c.caught_at, catch_path(c) %></li>
     <ul>
-      <li><%= link_to c.lure.name %></li>
-      <li><%= link_to c.fish_type.name %></li>
+      <li><%= link_to c.lure.name, lure_path(c.lure) %></li>
+      <li><%= link_to c.fish_type.name, fish_type_path(c.fish_type) %></li>
     </ul>
   </ul>
   <% end %>
