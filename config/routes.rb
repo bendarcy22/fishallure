@@ -3,4 +3,9 @@ Rails.application.routes.draw do
   root 'homepage#index'
   resources :homepage, only: [:index]
   resources :catches
+  resources :lures do
+    collection do
+      get 'hot'
+    end
+  end
 end

@@ -1,0 +1,4 @@
+<h2>Recent Hot Lures</h2>
+<% @hottest_lures.each do |lure, count| %>
+  <%= link_to lure.name, lure_path(lure) %>
+<% end %>
