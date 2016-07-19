@@ -1,0 +1,4 @@
+<h2>Most Caught Fish Around You</h2>
+<% @hottest_fishes.each do |fish, count| %>
+  <%= link_to fish.name, fish_type_path(fish) %>
+<% end %>
