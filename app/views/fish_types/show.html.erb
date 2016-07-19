@@ -1,0 +1,6 @@
+<h2><%= @fish.name %></h2>
+<h4><%= @fish.description %></h4>
+
+<% @lures_for_fish.each do |lure, count| %>
+  <h5><%= link_to lure.name, lure_path(lure) %></h5>
+<% end %>
