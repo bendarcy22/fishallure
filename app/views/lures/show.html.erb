@@ -4,6 +4,6 @@
 <h5><%= @lure.category.name %></h5>
 <h5><%= @lure.description %></h5>
 
-<% @lure.fish_types.each do |fish| %>
-  <h5><%= fish.name %></h5>
+<% @fish_on_lure.each do |fish, count| %>
+  <h5><%= link_to fish.name, fish_type_path(fish) %></h5>
 <% end %>
