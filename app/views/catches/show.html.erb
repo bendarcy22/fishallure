@@ -10,10 +10,10 @@
   <ul>
     <li><%= @catch.fish_type.name %></li>
   </ul>
-  <% if @catch.catch_photo.file != nil %>
+  <% if !@catch.catch_photo.file.nil? %>
     <div class="catch-photo">
       <%= image_tag @catch.catch_photo %>
-    </div>  
+    </div>
   <% end %>
   <ul>
     <li><%= @catch.lure.name %></li>

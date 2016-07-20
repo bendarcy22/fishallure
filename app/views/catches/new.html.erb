@@ -8,6 +8,7 @@
 
   <%= f.label :fish_type, "Fish" %>
   <%= f.select(:fish_type, FishType.all.collect {|fish| [ fish.name, fish.id ] }, :prompt => "Select a Fish") %>
+  <%= link_to "Add a Fish", new_fish_type_path %>
 
   <%= f.label :zipcode, "Zip Code" %>
   <%= f.text_field :zipcode %>
