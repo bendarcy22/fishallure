@@ -7,6 +7,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
 gem 'foundation-rails'
 gem 'devise'
+gem 'time_splitter'
 
 group :development, :test do
   gem 'capybara'
