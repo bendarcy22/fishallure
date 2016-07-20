@@ -29,11 +29,14 @@ feature "user attempts to add new catch" do
     fill_in "Zip Code", with: "12345"
     select_date("2016,July,7", from: "Caught at")
     select_time("12", "00", from: "Caught at")
+    attach_file "Add a picture of your catch!", "#{Rails.root}/spec/support/images/photo.png"
     click_button("Report it!")
 
     expect(page).to have_content "Your catch has been recorded!"
     expect(page).to have_content "Striped Bass"
     expect(page).to have_content "BestLure"
+    expect(page).to have_content(lure_1.category.name)
+    expect(page).to have_css("img[src*='photo.png']")
   end
   scenario "user adds catch unsuccessfully" do
     log_in_user

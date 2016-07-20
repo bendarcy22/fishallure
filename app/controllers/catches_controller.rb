@@ -16,18 +16,14 @@ class CatchesController < ApplicationController
   def create
     @catch = Catch.new(catch_params)
     @catch.user = current_user
-
-    if params[:catch][:fish_type].present?
+    if params[:catch][:fish_type].present? && params[:catch][:lure].present?
       @catch.fish_type = FishType.find(params[:catch][:fish_type])
-    end
-
-    if params[:catch][:lure].present?
       @catch.lure = Lure.find(params[:catch][:lure])
     end
 
     if @catch.save
       flash[:notice] = "Your catch has been recorded!"
-      redirect_to catches_path(@catch)
+      redirect_to catch_path(@catch)
     else
       flash[:errors] = @catch.errors.full_messages.join(", ")
       render :new
@@ -39,6 +35,7 @@ class CatchesController < ApplicationController
   def catch_params
     params.require(:catch).permit(
       :caught_at,
+      :catch_photo,
       :zipcode
     )
   end
