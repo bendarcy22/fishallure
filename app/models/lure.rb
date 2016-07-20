@@ -1,4 +1,6 @@
 class Lure < ActiveRecord::Base
+  mount_uploader :lure_photo, LurePhotoUploader
+
   belongs_to :user
   belongs_to :category
   has_many :catches

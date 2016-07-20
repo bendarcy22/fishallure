@@ -1,6 +1,5 @@
 class Catch < ActiveRecord::Base
-  extend TimeSplitter::Accessors
-  split_accessor :caught_at
+  mount_uploader :catch_photo, CatchPhotoUploader
 
   belongs_to :user
   belongs_to :lure

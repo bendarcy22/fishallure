@@ -15,6 +15,9 @@
   <%= f.label :caught_at, "Caught at:" %>
   <%= f.datetime_select :caught_at %>
 
+  <%= f.label :catch_photo, "Add a picture of your catch!" %>
+  <%= f.file_field :catch_photo %>
+
 
   <%= f.submit "Report it!"%>
   <% end %>

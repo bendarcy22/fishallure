@@ -8,6 +8,8 @@ gem 'jquery-rails'
 gem 'foundation-rails'
 gem 'devise'
 gem 'time_splitter'
+gem 'carrierwave'
+gem 'mini_magick'
 
 group :development, :test do
   gem 'capybara'
