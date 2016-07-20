@@ -22,7 +22,7 @@ class FishTypesController < ApplicationController
 
   def create
     @fish = FishType.new(fish_params)
-    if FishType.find_by(name: params[:fish_type][:name]) == nil
+    if FishType.find_by(name: params[:fish_type][:name]).nil?
       @fish.user = current_user
       if @fish.save
         flash[:notice] = "The Fish has been added!"

@@ -51,8 +51,6 @@ feature "user adds a new fish" do
     click_button("Add the Fish")
     expect(page).to have_content "That fish is already in the database"
     expect(page).to have_content "Add a fish to our database:"
-
-
   end
 
   scenario "user unsuccessfully adds fish" do
