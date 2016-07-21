@@ -1,0 +1,18 @@
+<h3>Add a lure to our database:</h3>
+
+<%= form_for @lure do |f|%>
+
+  <%= f.label :name, "Name" %>
+  <%= f.text_field :name %>
+
+  <%= f.label :manufacturer, "Manufacturer" %>
+  <%= f.text_field :manufacturer %>
+
+  <%= f.label :category, "Category" %>
+  <%= f.select(:category, options_for_select(@categories), :prompt => "Select a category") %>
+
+  <%= f.label :lure_photo, "Picture of Lure" %>
+  <%= f.file_field :lure_photo %>
+
+  <%= f.submit "Add the Lure" %>
+<% end %>

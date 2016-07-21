@@ -35,7 +35,7 @@ feature "user attempts to add new catch" do
     expect(page).to have_content "Your catch has been recorded!"
     expect(page).to have_content "Striped Bass"
     expect(page).to have_content "BestLure"
-    expect(page).to have_content(lure_1.category.name)
+    expect(page).to have_content(lure_1.category)
     expect(page).to have_css("img[src*='photo.png']")
   end
   scenario "user adds catch unsuccessfully" do

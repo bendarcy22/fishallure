@@ -58,5 +58,6 @@ feature "user adds a new fish" do
     click_link "Report your Catch"
     click_link "Add a Fish"
     click_button("Add the Fish")
+    expect(page).to have_content "Name can't be blank"
   end
 end

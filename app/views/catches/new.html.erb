@@ -5,6 +5,8 @@
 
   <%= f.label :lure, "Lure" %>
   <%= f.select(:lure, Lure.all.collect {|lure| [ lure.name, lure.id ] }, :prompt => "Select a Lure") %>
+  <%= link_to "Add a Lure", new_lure_path %>
+
 
   <%= f.label :fish_type, "Fish" %>
   <%= f.select(:fish_type, FishType.all.collect {|fish| [ fish.name, fish.id ] }, :prompt => "Select a Fish") %>
