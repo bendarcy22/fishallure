@@ -22,6 +22,6 @@ feature "user visits an individual catch page" do
     expect(page).to have_content(catch_1.fish_type.name)
     expect(page).to have_content(catch_1.lure.name)
     expect(page).to have_content(catch_1.lure.manufacturer)
-    expect(page).to have_content(catch_1.lure.category.name)
+    expect(page).to have_content(catch_1.lure.category)
   end
 end

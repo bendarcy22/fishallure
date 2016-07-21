@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160720151807) do
+ActiveRecord::Schema.define(version: 20160720232611) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,10 +25,6 @@ ActiveRecord::Schema.define(version: 20160720151807) do
     t.string   "catch_photo"
   end
 
-  create_table "categories", force: :cascade do |t|
-    t.string "name", null: false
-  end
-
   create_table "fish_types", force: :cascade do |t|
     t.string "name",        null: false
     t.string "user_id",     null: false
@@ -39,7 +35,7 @@ ActiveRecord::Schema.define(version: 20160720151807) do
   create_table "lures", force: :cascade do |t|
     t.string  "name",         null: false
     t.string  "manufacturer", null: false
-    t.integer "category_id",  null: false
+    t.integer "category",     null: false
     t.integer "user_id",      null: false
     t.text    "description"
     t.string  "lure_photo"

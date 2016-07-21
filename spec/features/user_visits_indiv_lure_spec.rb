@@ -27,7 +27,7 @@ feature "user sees individual lures page" do
     click_link('OkayLure', match: :first)
     expect(page).to have_content(lure_1.name)
     expect(page).to have_content(lure_1.manufacturer)
-    expect(page).to have_content(lure_1.category.name)
+    expect(page).to have_content(lure_1.category)
     expect(page).to have_content(lure_1.description)
     expect(page).to have_content(catch_1.fish_type.name)
     expect(page).to have_content(catch_2.fish_type.name)
