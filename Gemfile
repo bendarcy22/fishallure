@@ -10,6 +10,7 @@ gem 'devise'
 gem 'time_splitter'
 gem 'carrierwave'
 gem 'mini_magick'
+gem "fog-aws"
 
 group :development, :test do
   gem 'capybara'
@@ -20,6 +21,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'shoulda-matchers', '~> 3.1', require: false
   gem 'valid_attribute'
+  gem "dotenv-rails"
 end
 
 group :test do
