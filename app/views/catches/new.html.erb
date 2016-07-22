@@ -22,6 +22,9 @@
   <%= f.file_field :catch_photo %>
 
 
-  <%= f.submit "Report it!"%>
+  <%= f.submit "Report it!", id: "add-catch"%>
   <% end %>
 </div>
+<div id="map"></div>
+<script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAPS_API_KEY'] %>&callback=initMap"
+async defer></script>
