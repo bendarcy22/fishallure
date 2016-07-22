@@ -37,7 +37,7 @@ function addMarker(location, map) {
     position: location,
     map: map,
     draggable: true,
-    animation: google.maps.Animation.DROP,
+    animation: google.maps.Animation.DROP
   });
 }
 function getCatchLocation() {
