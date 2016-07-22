@@ -8,6 +8,9 @@ class Catch < ActiveRecord::Base
   validates :user_id, presence: true
   validates :lure_id, presence: true
   validates :fish_type_id, presence: true
-  validates :zipcode, presence: true, length: { is: 5 }, numericality: { only_integer: true }
+  validates :latitude, presence: true
+  validates :latitude, numericality: { greater_than_or_equal_to: -90, less_than_or_equal_to: 90 }
+  validates :longitude, presence: true
+  validates :longitude, numericality: { greater_than_or_equal_to: -180, less_than_or_equal_to: 180 }
   validates :caught_at, presence: true
 end

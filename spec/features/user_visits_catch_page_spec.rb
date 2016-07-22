@@ -17,7 +17,6 @@ feature "user visits an individual catch page" do
     click_link "Recent Catches"
     click_link catch_1.caught_at
     expect(page).to have_content(catch_1.user.username)
-    expect(page).to have_content(catch_1.zipcode)
     expect(page).to have_content(catch_1.caught_at)
     expect(page).to have_content(catch_1.fish_type.name)
     expect(page).to have_content(catch_1.lure.name)

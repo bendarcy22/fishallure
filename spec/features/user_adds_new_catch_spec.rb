@@ -26,9 +26,9 @@ feature "user attempts to add new catch" do
     expect(page).to have_content "Report what you caught here!"
     select "Striped Bass", from: "Fish"
     select "BestLure", from: "Lure"
-    fill_in "Zip Code", with: "12345"
+    fill_in "Latitude", with: "0"
+    fill_in "Longitude", with: "0"
     select_date("2016,July,7", from: "Caught at")
-    select_time("12", "00", from: "Caught at")
     attach_file "Add a picture of your catch!", "#{Rails.root}/spec/support/images/photo.png"
     click_button("Report it!")
 
@@ -44,8 +44,7 @@ feature "user attempts to add new catch" do
     click_button("Report it!")
     expect(page).to have_content "Lure can't be blank"
     expect(page).to have_content "Fish type can't be blank"
-    expect(page).to have_content "Zipcode can't be blank"
-    expect(page).to have_content "Zipcode is the wrong length (should be 5 characters)"
-    expect(page).to have_content "Zipcode is not a number"
+    expect(page).to have_content "Latitude can't be blank"
+    expect(page).to have_content "Longitude can't be blank"
   end
 end

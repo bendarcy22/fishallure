@@ -36,7 +36,8 @@ class CatchesController < ApplicationController
     params.require(:catch).permit(
       :caught_at,
       :catch_photo,
-      :zipcode
+      :latitude,
+      :longitude
     )
   end
 end
