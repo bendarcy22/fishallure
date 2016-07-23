@@ -11,25 +11,30 @@
     <%= f.label :fish_type, "Fish" %>
     <%= f.select(:fish_type, FishType.all.collect {|fish| [ fish.name, fish.id ] }, :prompt => "Select a Fish") %>
     <%= link_to "Add a Fish", new_fish_type_path %>
-  </div>
-  <div class="small-6 columns">
-    <a href='#' id='locate-me' class='ui-button'>Find me</a>
+
     <%= f.label :latitude, "Latitude" %>
     <%= f.text_field :latitude %>
+
     <%= f.label :longitude, "Longitude" %>
     <%= f.text_field :longitude %>
 
     <%= f.label :caught_at, "Caught at:" %>
     <%= f.date_select :caught_at %>
   </div>
+  <div class="small-6 columns">
+    <a href='#' id='locate-me' class='button'>Find me</a>
+    <div id='map'</div>
+  </div>
 </div>
 <div class="row">
+  <div class="small-6 small-centered columns">
+
   <%= f.label :catch_photo, "Add a picture of your catch!" %>
   <%= f.file_field :catch_photo %>
 
   <%= f.submit "Report it!", id: "add-catch"%>
   <% end %>
-  <div id='map'</div>
+</div>
 </div>
 <script>
   drawNewCatchMap();
