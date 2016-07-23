@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require foundation
 //= require_tree .
+//= require map/index
 
 $(function(){ $(document).foundation(); });
 
@@ -21,7 +22,6 @@ function drawNewCatchMap(){
   L.mapbox.accessToken = 'pk.eyJ1IjoiYmVuZGFyY3kiLCJhIjoiY2lxeHYzenMzMDFsdGZ4a3FuczZkOGRyZyJ9.VUJFQ0bsqkMTHHBa9X2DEg';
 
   var map = L.mapbox.map('map', 'mapbox.streets-satellite', { zoomControl: false });
-  var geocoder = L.mapbox.geocoder('mapbox.places');
   new L.Control.Zoom({ position: 'bottomright' }).addTo(map);
   var marker = L.marker(new L.LatLng(42.3603, -71.0580), {
     draggable: true
@@ -30,8 +30,8 @@ function drawNewCatchMap(){
   var $lngForm = $('#catch_longitude');
   var $geolocate = $('#locate-me');
   map.fitBounds([
-    [42.346397049733966, -71.1029577255249],
-    [42.369451896762385, -71.04429244995117]
+    [41.346397049733966, -70.1029577255249],
+    [43.369451896762385, -72.04429244995117]
     ]);
 
   if (!navigator.geolocation) {

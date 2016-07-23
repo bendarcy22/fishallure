@@ -1,12 +1,19 @@
 <h2>Most Recent Catches</h2>
-
-
-  <% @catches.each do |c| %>
-  <ul>
-    <li><%= link_to c.caught_at, catch_path(c) %></li>
+<div class="row">
+  <div class="small-6 columns">
+    <% @catches.each do |c| %>
     <ul>
-      <li><%= link_to c.lure.name, lure_path(c.lure) %></li>
-      <li><%= link_to c.fish_type.name, fish_type_path(c.fish_type) %></li>
+      <li><%= link_to c.caught_at, catch_path(c) %></li>
+      <ul>
+        <li><%= link_to c.lure.name, lure_path(c.lure) %></li>
+        <li><%= link_to c.fish_type.name, fish_type_path(c.fish_type) %></li>
+      </ul>
     </ul>
-  </ul>
-  <% end %>
+    <% end %>
+  </div>
+  <a href='#' id='locate-me' class='button'>Find me</a>
+  <div class="small-6 columns" id="map"></div>
+  <script type="text/javascript">
+  drawIndexCatchMap();
+  </script>
+ </div>
