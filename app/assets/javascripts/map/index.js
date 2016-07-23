@@ -37,7 +37,7 @@ function drawIndexCatchMap(){
   request.done(function(data) {
     data.catches.forEach(function(c){
       L.marker(new L.LatLng(c.latitude, c.longitude)).addTo(map)
-      .bindPopup(`<a href="/catches/${c.id}">${c.caught_at}</a>`)
+      .bindPopup("<a href=/catches/" + c.id + ">" + c.caught_at + "</a>")
       .openPopup();
     });
   });
