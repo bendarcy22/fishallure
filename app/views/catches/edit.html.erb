@@ -1,0 +1,49 @@
+<h2>Update your Catch</h2>
+
+<div>
+  <%= form_for @catch do |f| %>
+<div class="row">
+  <div class="small-6 columns">
+    <div class="small-6 columns">
+      <%= f.label :lure, "Lure" %>
+      <%= f.select(:lure, Lure.all.collect {|lure| [ lure.name, lure.id ] }, :prompt => "Select a Lure") %>
+      <%= link_to "Add a Lure", new_lure_path %>
+
+    </div>
+    <div class="small-6 columns">
+      <%= f.label :fish_type, "Fish" %>
+      <%= f.select(:fish_type, FishType.all.collect {|fish| [ fish.name, fish.id ] }, :prompt => "Select a Fish") %>
+      <%= link_to "Add a Fish", new_fish_type_path %>
+    </div>
+    <div class="row">
+      <div class="small-6 columns">
+        <%= f.label :latitude, "Latitude" %>
+        <%= f.text_field :latitude %>
+      </div>
+      <div class="small-6 columns">
+        <%= f.label :longitude, "Longitude" %>
+        <%= f.text_field :longitude %>
+      </div>
+    </div>
+    <%= f.label :caught_at, "Caught at:" %>
+    <%= f.date_field :caught_at %>
+
+    <%= f.label :catch_photo, "Add a picture of your catch!" %>
+    <%= f.file_field :catch_photo %>
+
+    <%= f.submit "Update Catch", id: "add-catch"%>
+    <% end %>
+  </div>
+  <div class="small-6 columns" id="map-holder">
+    <a href='#' id='locate-me' class='button'>Locate Me</a>
+    <div id='map'></div>
+  </div>
+</div>
+
+<script>
+  $(document).ready(function () {
+    var catchLat = document.getElementById("catch_latitude").value;
+    var catchLng = document.getElementById("catch_longitude").value;
+    drawEditCatchMap(catchLat, catchLng);
+  });
+</script>
