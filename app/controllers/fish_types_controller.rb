@@ -1,5 +1,8 @@
 class FishTypesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :hot, :show]
+  def index
+    @fishes = FishType.all
+  end
 
   def hot
     @catches = Catch.all

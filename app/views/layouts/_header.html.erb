@@ -1,19 +1,115 @@
 <div class="top-bar">
   <div class="top-bar-left">
+    <ul class="dropdown-menu" data-dropdown-menu>
+      <li class="menu-text">
+        <%= link_to "FishAllure", root_path %>
+        <ul class="menu">
+          <button class="expanded hollow button" type="button" data-toggle="catches-dropdown">Recent Catches</button>
+          <div class="dropdown-pane" id="catches-dropdown" data-dropdown data-auto-focus="true">
+            <div class="row">
+              Narrow your search
+            </div>
+            <br>
+            <div class="row">
+              <%= form_tag(recent_catches_path, method: "get") do %>
+              <div class="small-6 columns">
+                <label>Fish
+                  <%= text_field_tag(:f) %>
+                </label>
+              </div>
+              <div class="small-6 columns">
+                <label>Lure
+                  <%= text_field_tag(:l) %>
+                </label>
+              </div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="small-6 columns">
+                <label>Zip Code
+                  <%= text_field_tag(:zipcode) %>
+                </label>
+              </div>
+              <div class="small-6 columns">
+                <%= link_to "All Recent Catches", catches_path %>
+                <br>
+                <%= submit_tag("Search Recent Catches", {:class => 'button'}) %>
+              </div>
+              <% end %>
+            </div>
+          </div>
+            <button class="expanded hollow button" type="button" data-toggle="lures-dropdown">Hot Lures</button>
+            <div class="dropdown-pane" id="lures-dropdown" data-dropdown data-auto-focus="true">
+              <div class="row">
+                Narrow your search
+              </div>
+              <br>
+              <div class="row">
+                <%= form_tag(hot_lures_path, method: "get") do %>
+                <div class="small-4 columns">
+                  <label>Fish
+                    <%= text_field_tag(:f) %>
+                  </label>
+                </div>
+                <div class="small-4 columns">
+                  <label>Zip Code
+                    <%= text_field_tag(:zipcode) %>
+                  </label>
+                </div>
+                <div class="small-4 columns">
+                  <%= link_to "All Lures", lures_path %>
+                  <br>
+                  <%= submit_tag("Search Hot Lures", {:class => 'button'}) %>
+                </div>
+                <% end %>
+              </div>
+            </div>
+          <button class="expanded hollow button" type="button" data-toggle="fish-type-dropdown">Fish Near Me</button>
+          <div class="dropdown-pane" id="fish-type-dropdown" data-dropdown data-auto-focus="true">
+            <div class="row">
+              Narrow your search
+            </div>
+            <br>
+            <div class="row">
+              <%= form_tag(hot_fish_types_path, method: "get") do %>
+              <div class="small-4 columns">
+                <label>Lure
+                  <%= text_field_tag(:l) %>
+                </label>
+              </div>
+              <div class="small-4 columns">
+                <label>Zip Code
+                  <%= text_field_tag(:zipcode) %>
+                </label>
+              </div>
+              <div class="small-4 columns">
+                <%= link_to "All Fish", fish_types_path %>
+                <br>
+                <%= submit_tag("Search Fish Near You", {:class => 'button'}) %>
+              </div>
+              <% end %>
+            </div>
+          </div>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <div class="top-bar-section">
     <ul class="menu">
-      <li class="menu-text"><%= link_to "FishAllure", root_path %></li>
-      <li class="nav-buttons"><%= link_to "Recent Catches", catches_path %></li>
-      <li class="nav-buttons"><%= link_to "Hot Lures", hot_lures_path %></li>
-      <li class="nav-buttons"><%= link_to "Fish Near Me", hot_fish_types_path %></li>
       <li class="nav-buttons"><%= link_to "Report your Catch", new_catch_path %></li>
-
+    </ul>
+  </div>
+  <div class="top-bar-right">
+    <ul class="dropdown-menu right" data-dropdown-menu>
       <% if user_signed_in? %>
-        <li class="nav-buttons"><%= link_to "Edit Profile", edit_user_registration_path %></li>
-        <li class="nav-buttons"><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></li>
+      <li class="menu-text"><%= link_to current_user.username, edit_user_registration_path %>
+        <ul class="menu">
+          <li class="nav-buttons"><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></li>
+        </ul>
+      </li>
       <% else %>
         <li class="nav-buttons"><%= link_to "Sign In", new_user_session_path %></li>
       <% end %>
     </ul>
-
   </div>
 </div>

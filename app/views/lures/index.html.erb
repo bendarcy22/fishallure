@@ -1,0 +1,6 @@
+<h3>All Lures</h3>
+<ul>
+  <% @lures.each do |lure| %>
+  <li><%= link_to lure.name, lure_path(lure) %></li>
+  <% end %>
+</ul>

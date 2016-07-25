@@ -3,8 +3,36 @@
 @import "foundation_and_overrides";
 
 #map {
-  margin-bottom: 20px;
+  margin: 20px;
   display: inline-block;
   height: 500px;
   width: 500px;
+}
+
+#map-holder {
+  position: relative;
+}
+
+#locate-me {
+  position: absolute;
+  z-index: 1;
+  top: 35px;
+  left: 50px;
+}
+
+#catches-menu {
+  display: inline-block;
+}
+
+.top-bar-section {
+  width: 75%;
+}
+
+.top-bar-right {
+  position: relative;
+  bottom: 40px;
+}
+
+.top-bar {
+  height: 60px;
 }

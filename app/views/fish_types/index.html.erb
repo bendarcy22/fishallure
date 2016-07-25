@@ -1,0 +1,6 @@
+<h3>All Fish</h3>
+<ul>
+  <% @fishes.each do |fish| %>
+  <li><%= link_to fish.name, fish_type_path(fish) %></li>
+  <% end %>
+</ul>

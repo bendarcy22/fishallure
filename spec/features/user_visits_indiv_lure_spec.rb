@@ -23,7 +23,9 @@ feature "user sees individual lures page" do
 
   scenario "click on name of the lure from reported catch post" do
     visit root_path
-    click_link "Recent Catches"
+    click_button "Recent Catches"
+    click_link "All Recent Catches"
+
     click_link('OkayLure', match: :first)
     expect(page).to have_content(lure_1.name)
     expect(page).to have_content(lure_1.manufacturer)

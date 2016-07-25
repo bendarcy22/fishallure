@@ -3,18 +3,22 @@
 
 <div class="row">
   <%= form_for @lure do |f|%>
-  <div class="large-6 columns">
+  <div class="small-6 columns">
     <%= f.label :name, "Name" %>
     <%= f.text_field :name %>
   </div>
-  <div class="large-6 columns">
+  <div class="small-6 columns">
     <%= f.label :manufacturer, "Manufacturer" %>
     <%= f.text_field :manufacturer %>
   </div>
   <div class="row">
-    <div class="center large-6 column">
+    <div class="small-6 column">
       <%= f.label :category, "Category" %>
       <%= f.select(:category, options_for_select(@categories), :prompt => "Select a category") %>
+    </div>
+    <div class="small-6 columns">
+      <%= f.label :description, "Description" %>
+      <%= f.text_area :description %>
     </div>
   </div>
 

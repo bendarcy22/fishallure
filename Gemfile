@@ -12,6 +12,7 @@ gem 'time_splitter'
 gem 'carrierwave'
 gem 'mini_magick'
 gem "fog-aws"
+gem 'sprockets', '~> 3.6', '>= 3.6.3'
 
 group :development, :test do
   gem 'capybara'
