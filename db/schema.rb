@@ -11,19 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160723001601) do
+ActiveRecord::Schema.define(version: 20160724205725) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "catches", force: :cascade do |t|
-    t.integer  "user_id",      null: false
-    t.integer  "lure_id",      null: false
-    t.integer  "fish_type_id", null: false
-    t.datetime "caught_at",    null: false
-    t.string   "catch_photo"
-    t.float    "longitude",    null: false
-    t.float    "latitude",     null: false
+    t.integer "user_id",      null: false
+    t.integer "lure_id",      null: false
+    t.integer "fish_type_id", null: false
+    t.date    "caught_at",    null: false
+    t.string  "catch_photo"
+    t.float   "longitude",    null: false
+    t.float   "latitude",     null: false
   end
 
   create_table "fish_types", force: :cascade do |t|

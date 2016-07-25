@@ -7,7 +7,11 @@ Rails.application.routes.draw do
     resources :catches, only: [:index, :show]
   end
 
-  resources :catches
+  resources :catches do
+    collection do
+      get 'recent'
+    end
+  end
 
   resources :lures do
     collection do

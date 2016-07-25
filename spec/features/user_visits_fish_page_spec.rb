@@ -21,7 +21,9 @@ feature "user sees individual fishs page" do
 
   scenario "click on name of the fish from reported catch post" do
     visit root_path
-    click_link "Recent Catches"
+    click_button "Recent Catches"
+    click_link "All Recent Catches"
+
     click_link('Okayfish', match: :first)
     expect(page).to have_content(fish_1.name)
     expect(page).to have_content(fish_1.description)

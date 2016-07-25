@@ -28,9 +28,22 @@ feature "user views Hot Lures page" do
   let!(:catch_4) { create :catch, lure: lure_3 }
   let!(:catch_5) { create :catch, lure: lure_1 }
   let!(:catch_6) { create :catch, lure: lure_3 }
+  scenario "user ignores form" do
+    visit root_path
+    click_button "Hot Lures"
+    click_link "All Lures"
+
+    expect(page).to have_content "All Lures"
+    expect(page).to have_content('BestLure', count: 1)
+    expect(page).to have_content('OkayLure', count: 1)
+    expect(page).to have_content('BadLure', count: 1)
+  end
   scenario "user inputs nothing into form" do
     visit root_path
-    click_link "Hot Lures"
+    click_button "Hot Lures"
+    click_button "Search Hot Lures"
+
+
     expect(page).to have_content "Recent Hot Lures"
     expect(page).to have_content('BestLure', count: 1)
     expect(page).to have_content('OkayLure', count: 1)

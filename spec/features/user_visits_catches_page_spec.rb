@@ -25,7 +25,9 @@ feature "user views catches page" do
   let!(:catch_2) { create :catch }
   scenario "user inputs nothing into form" do
     visit root_path
-    click_link "Recent Catches"
+    click_button "Recent Catches"
+    click_link "All Recent Catches"
+
     expect(page).to have_content "Most Recent Catches"
     expect(page).to have_link(catch_1.caught_at)
     expect(page).to have_link(catch_1.lure.name)
