@@ -30,6 +30,28 @@ class CatchesController < ApplicationController
     end
   end
 
+  def edit
+    @catch = Catch.find(params[:id])
+  end
+
+  def update
+    @catch = Catch.find(params[:id])
+    if @catch.update_attributes(catch_params)
+      flash[:notice] = "Your catch was updated successfully"
+      redirect_to catch_path(@catch)
+    else
+      flash[:errors] = @catch.errors.full_messages.join(",")
+      render :edit
+    end
+  end
+
+  def destroy
+    @catch = Catch.find(params[:id])
+    @catch.destroy
+    flash[:notice] = "Catch deleted successfully"
+    redirect_to catches_path
+  end
+
   private
 
   def catch_params

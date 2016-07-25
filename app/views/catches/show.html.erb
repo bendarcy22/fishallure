@@ -3,6 +3,16 @@
   <ul>
     <li><%= @catch.user.username %></li>
     <li><%= @catch.caught_at %></li>
+    <% if !current_user.nil? %>
+      <% if current_user.id == @catch.user.id %>
+      <li>
+        <%= link_to "Update your Catch", edit_catch_path(@catch) %>
+      </li>
+      <li>
+        <%= link_to "Delete your Catch", catch_path(@catch), data: { :confirm => "Are you sure?" }, method: :delete %>
+      </li>
+      <% end %>
+    <% end %>
   </ul>
 </div>
 <div class="catch-info">
@@ -19,5 +29,19 @@
     <li><%= @catch.lure.manufacturer %></li>
     <li><%= @catch.lure.category %></li>
   </ul>
+  <ul>
+    <li>Latitude:</li>
+    <li id="latitude"><%= @catch.latitude %></li>
+    <li>Longitude:</li>
+    <li id="longitude"><%= @catch.longitude %></li>
+  </ul>
 </div>
-<div class="show-map"></div>
+<div id="map"></div>
+
+<script>
+  $(document).ready(function () {
+    var catchLat = document.getElementById("latitude").innerHTML;
+    var catchLng = document.getElementById("longitude").innerHTML;
+    drawShowCatchMap(catchLat, catchLng);
+  });
+</script>
