@@ -1,6 +1,8 @@
-<h3>All Lures</h3>
-<ul>
-  <% @lures.each do |lure| %>
-  <li><%= link_to lure.name, lure_path(lure) %></li>
-  <% end %>
-</ul>
+<h3 class="header-title">All Lures</h3>
+<div class="callout primary">
+  <ul>
+    <% @lures.each do |lure| %>
+    <li><%= link_to lure.name, lure_path(lure) %></li>
+    <% end %>
+  </ul>
+</div>

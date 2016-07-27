@@ -1,21 +1,23 @@
-<h2>Most Recent Catches</h2>
-<div class="row">
-  <div class="small-6 columns">
-    <% @catches.each do |c| %>
-    <ul>
-      <li><%= link_to c.caught_at, catch_path(c) %></li>
-      <ul>
-        <li><%= link_to c.lure.name, lure_path(c.lure) %></li>
-        <li><%= link_to c.fish_type.name, fish_type_path(c.fish_type) %></li>
-      </ul>
-    </ul>
-    <% end %>
+<h2 class="header-title">All Catches</h2>
+<div class="callout primary">
+  <div class="row">
+    <div class="small-6 columns">
+      <% @catches.each do |c| %>
+        <ul>
+          <li><%= link_to c.caught_at, catch_path(c) %></li>
+          <ul>
+            <li><%= link_to c.lure.name, lure_path(c.lure) %></li>
+            <li><%= link_to c.fish_type.name, fish_type_path(c.fish_type) %></li>
+          </ul>
+        </ul>
+        <% end %>
+      </div>
+    <div class="small-6 columns" id="map-holder">
+      <a href='#' id='locate-me' class='button'>Locate Me</a>
+      <div id='map'></div>
+      <script type="text/javascript">
+        drawIndexCatchMap();
+      </script>
+    </div>
   </div>
-  <div class="small-6 columns" id="map-holder">
-    <a href='#' id='locate-me' class='button'>Locate Me</a>
-    <div id='map'></div>
-    <script type="text/javascript">
-      drawIndexCatchMap();
-    </script>
-  </div>
- </div>
+</div>

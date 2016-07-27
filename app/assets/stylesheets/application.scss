@@ -2,15 +2,42 @@
 /*= require foundation */
 @import "foundation_and_overrides";
 
+body {
+  background-image: image-url("fish-2.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+  z-index: 0
+}
+
+
+h1, h2, h3, h4 {
+  color: #9BC585
+}
+
+.columns {
+  text-align: center;
+}
+
 #map {
   margin: 20px;
   display: inline-block;
-  height: 500px;
-  width: 500px;
+  height: 550px;
+  width: 550px;
+  top: 0;
+}
+
+.header-title {
+  margin-left: 35%;
 }
 
 #map-holder {
   position: relative;
+}
+
+.callout {
+  opacity: .9;
 }
 
 #locate-me {
@@ -19,6 +46,17 @@
   top: 35px;
   left: 50px;
 }
+.menu > li {
+  font-size: 20px;
+}
+
+#title-nav {
+  font-size: 24px;
+}
+
+ul {
+  list-style: none;
+}
 
 #catches-menu {
   display: inline-block;
@@ -26,6 +64,7 @@
 
 .top-bar-section {
   width: 75%;
+  padding-left: 450px;
 }
 
 .top-bar-right {
@@ -35,4 +74,11 @@
 
 .top-bar {
   height: 60px;
+}
+
+#title {
+  margin: 80px;
+}
+#slogan {
+  text-align: center;
 }

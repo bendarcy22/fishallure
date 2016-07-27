@@ -1,5 +1,5 @@
-<h3>Add a fish to our database:</h3>
-
+<h3 class="header-title">Add a fish to our database:</h3>
+<div class="callout primary">
 <%= form_for @fish do |f|%>
 
   <%= f.label :name %>
@@ -11,5 +11,6 @@
   <%= f.label :fish_photo, "Picture of Fish" %>
   <%= f.file_field :fish_photo %>
 
-  <%= f.submit "Add the Fish" %>
-<% end %>
+  <%= f.submit "Add the Fish", class: "button" %>
+  <% end %>
+</div>

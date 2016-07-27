@@ -1,4 +1,14 @@
-<h2>Recent Hot Lures</h2>
-<% @hottest_lures.each do |lure, count| %>
-  <%= link_to lure.name, lure_path(lure) %>
-<% end %>
+<h2 class="header-title">Recent Hot Lures</h2>
+<div class="callout primary">
+  <ul>
+    <% if @hottest_lures.nil? %>
+    <h5>Sorry, there are no reported lures matching your search request</h5>
+    <% else %>
+    <% @hottest_lures.each do |lure, count| %>
+      <li>
+        <%= link_to lure.name, lure_path(lure) %>
+      </li>
+      <% end %>
+    <% end %>
+  </ul>
+</div>

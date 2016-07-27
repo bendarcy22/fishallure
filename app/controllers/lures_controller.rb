@@ -1,10 +1,21 @@
 class LuresController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :hot, :show]
+
   def index
     @lures = Lure.all
   end
 
   def hot
-    @catches = Catch.all
+    if params["f"].present?
+      @fish = FishType.where("name ILIKE ?", "%#{params[:f]}%")
+      if @fish.present?
+        @catches = Catch.where("fish_type": @fish)
+      else
+        render :recent
+      end
+    else
+      @catches = Catch.all
+    end
     @lures = Hash.new(0)
     @catches.each { |c| @lures[c.lure] += 1 }
     @hottest_lures = @lures.sort_by { |_k, v| v }.reverse
