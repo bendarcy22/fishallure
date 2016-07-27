@@ -16,9 +16,9 @@ feature "user visits an individual catch page" do
     visit root_path
     click_button "Recent Catches"
     click_link "All Recent Catches"
-    click_link(catch_1.caught_at, match: :first)
+    click_link(catch_1.caught_at.strftime("Caught on %m/%d/%Y"), match: :first)
     expect(page).to have_content(catch_1.user.username)
-    expect(page).to have_content(catch_1.caught_at)
+    expect(page).to have_content(catch_1.caught_at.strftime("Caught on %m/%d/%Y"))
     expect(page).to have_content(catch_1.fish_type.name)
     expect(page).to have_content(catch_1.lure.name)
     expect(page).to have_content(catch_1.lure.manufacturer)

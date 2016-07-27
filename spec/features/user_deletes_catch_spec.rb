@@ -12,7 +12,7 @@ feature "user deletes catch" do
     sign_out
     sign_in_as_dummy
     visit catches_path
-    click_link "2016-01-01"
+    click_link "Caught on 01/01/2016"
     expect(page).to have_content "Striped Bass"
     expect(page).to have_content "BestLure"
     expect(page).to_not have_link "Delete your catch"

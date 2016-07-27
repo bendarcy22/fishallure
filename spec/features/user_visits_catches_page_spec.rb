@@ -31,10 +31,10 @@ feature "user views catches page" do
     click_link "All Recent Catches"
 
     expect(page).to have_content "All Catches"
-    expect(page).to have_link(catch_1.caught_at)
+    expect(page).to have_link(catch_1.caught_at.strftime("Caught on %m/%d/%Y"))
     expect(page).to have_link(catch_1.lure.name)
     expect(page).to have_link(catch_1.fish_type.name)
-    expect(page).to have_link(catch_2.caught_at)
+    expect(page).to have_link(catch_2.caught_at.strftime("Caught on %m/%d/%Y"))
     expect(page).to have_link(catch_2.lure.name)
     expect(page).to have_link(catch_2.fish_type.name)
   end
@@ -44,10 +44,10 @@ feature "user views catches page" do
     click_button "Search Recent Catches"
 
     expect(page).to have_content "Most Recent Catches"
-    expect(page).to have_link(catch_1.caught_at)
+    expect(page).to have_link(catch_1.caught_at.strftime("Caught on %m/%d/%Y"))
     expect(page).to have_link(catch_1.lure.name)
     expect(page).to have_link(catch_1.fish_type.name)
-    expect(page).to have_link(catch_2.caught_at)
+    expect(page).to have_link(catch_2.caught_at.strftime("Caught on %m/%d/%Y"))
     expect(page).to have_link(catch_2.lure.name)
     expect(page).to have_link(catch_2.fish_type.name)
   end
@@ -59,10 +59,10 @@ feature "user views catches page" do
     end
     click_button "Search Recent Catches"
     expect(page).to have_content "Most Recent Catches"
-    expect(page).to have_link(catch_1.caught_at)
+    expect(page).to have_link(catch_1.caught_at.strftime("Caught on %m/%d/%Y"))
     expect(page).to have_link(catch_1.lure.name)
     expect(page).to have_link(catch_1.fish_type.name)
-    expect(page).to_not have_link(catch_2.caught_at)
+    expect(page).to_not have_link(catch_2.caught_at.strftime("Caught on %m/%d/%Y"))
     expect(page).to_not have_link(catch_2.lure.name)
     expect(page).to_not have_link(catch_2.fish_type.name)
   end
@@ -75,10 +75,10 @@ feature "user views catches page" do
     click_button "Search Recent Catches"
 
     expect(page).to have_content "Most Recent Catches"
-    expect(page).to have_link(catch_1.caught_at)
+    expect(page).to have_link(catch_1.caught_at.strftime("Caught on %m/%d/%Y"))
     expect(page).to have_link(catch_1.lure.name)
     expect(page).to have_link(catch_1.fish_type.name)
-    expect(page).to_not have_link(catch_2.caught_at)
+    expect(page).to_not have_link(catch_2.caught_at.strftime("Caught on %m/%d/%Y"))
     expect(page).to_not have_link(catch_2.lure.name)
     expect(page).to_not have_link(catch_2.fish_type.name)
   end

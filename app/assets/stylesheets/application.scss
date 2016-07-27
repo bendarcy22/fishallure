@@ -11,9 +11,10 @@ body {
   z-index: 0
 }
 
-
-h1, h2, h3, h4 {
-  color: #9BC585
+#button-group {
+  position: absolute;
+  margin-left: 10px;
+  left: 0;
 }
 
 .columns {
@@ -65,15 +66,19 @@ ul {
 .top-bar-section {
   width: 75%;
   padding-left: 450px;
+  font-family: "Rock Salt"
+
 }
 
 .top-bar-right {
   position: relative;
   bottom: 40px;
+  font-family: "Rock Salt"
+
 }
 
-.top-bar {
-  height: 60px;
+.top-bar-left {
+  font-family: "Rock Salt"
 }
 
 #title {

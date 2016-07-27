@@ -1,9 +1,11 @@
-<div class="callout primary">
+<div class="callout">
   <h2 class="header-title"><%= @lure.name %></h2>
-  <h4><%= @lure.manufacturer %></h4>
+  <h4>Made by: <%= @lure.manufacturer %></h4>
 
-  <h5><%= @lure.category %></h5>
-  <h5><%= @lure.description %></h5>
+  <h5>Category: <%= @lure.category %></h5>
+  <% if @lure.description.present? %>
+    <h5><%= @lure.description %></h5>
+  <% end %>
   <% if !@lure.lure_photo.file.nil? %>
     <div class="lure-photo">
       <%= image_tag @lure.lure_photo %>
@@ -13,6 +15,7 @@
   <% if @fish_on_lure == 0 %>
     <h4>No fish have been recorded as caught on this lure, go catch one!</h4>
   <% else %>
+    <h3>Fish that have been caught on this lure:</h3>
     <% @fish_on_lure.each do |fish, count| %>
     <h5><%= link_to fish.name, fish_type_path(fish) %></h5>
     <% end %>
