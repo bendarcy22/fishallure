@@ -1,8 +1,28 @@
 class CatchesController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!, except: [:recent, :index, :show]
+
+  def recent
+    if params["l"].present?
+      @lure = Lure.where("name ILIKE ?", "%#{params[:l]}%")
+      if @lure.present?
+        @catches = Catch.where("lure": @lure)
+      else
+        render :recent
+      end
+    elsif params["f"].present?
+      @fish = FishType.where("name ILIKE ?", "%#{params[:f]}%")
+      if @fish.present?
+        @catches = Catch.where("fish_type": @fish)
+      else
+        render :recent
+      end
+    else
+      @catches = Catch.order(caught_at: :desc)
+    end
+  end
 
   def index
-    @catches = Catch.order(caught_at: :desc)
+    @catches = Catch.all
   end
 
   def show

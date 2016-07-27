@@ -1,4 +1,14 @@
-<h2>Most Caught Fish Around You</h2>
-<% @hottest_fishes.each do |fish, count| %>
-  <%= link_to fish.name, fish_type_path(fish) %>
-<% end %>
+<h2 class="header-title">Caught Fish</h2>
+<div class="callout primary">
+  <ul>
+    <% if @hottest_fishes.nil? %>
+    <h5>Sorry, there are no reported fish matching your search request</h5>
+    <% else %>
+      <% @hottest_fishes.each do |fish, count| %>
+      <li>
+        <%= link_to fish.name, fish_type_path(fish) %>
+      </li>
+      <% end %>
+    <% end %>
+  </ul>
+</div>

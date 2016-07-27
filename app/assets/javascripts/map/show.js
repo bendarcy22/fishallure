@@ -28,8 +28,7 @@ function drawMap() {
 
 function drawShowCatchMap(catchLat, catchLng){
   drawMap();
-  marker = L.marker(new L.LatLng(catchLat, catchLng), {
-    draggable: true
-  });
+  marker = L.marker(new L.LatLng(catchLat, catchLng));
+  map.setView(new L.LatLng(catchLat, catchLng), 11)
   marker.addTo(map);
 }

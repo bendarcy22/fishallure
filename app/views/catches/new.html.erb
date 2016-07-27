@@ -1,8 +1,8 @@
-<h2>Report what you caught here!</h2>
+<h2 class="header-title">Report what you caught here!</h2>
 
-<div>
-  <%= form_for @catch do |f| %>
+<div class="callout primary">
 <div class="row">
+  <%= form_for @catch do |f| %>
   <div class="small-6 columns">
     <div class="small-6 columns">
       <%= f.label :lure, "Lure" %>
@@ -25,21 +25,24 @@
         <%= f.text_field :longitude %>
       </div>
     </div>
-    <%= f.label :caught_at, "Caught at:" %>
-    <%= f.date_field :caught_at %>
+    <div class="row">
+      <div class="small-6 small-centered column">
+        <%= f.label :caught_at, "Caught at:" %>
+        <%= f.date_field :caught_at %>
 
-    <%= f.label :catch_photo, "Add a picture of your catch!" %>
-    <%= f.file_field :catch_photo %>
+        <%= f.label :catch_photo, "Add a picture of your catch!" %>
+        <%= f.file_field :catch_photo %>
 
-    <%= f.submit "Report it!", id: "add-catch"%>
-    <% end %>
+        <%= f.submit "Report it!", class: "button" %>
+        <% end %>
+      </div>
+    </div>
   </div>
   <div class="small-6 columns" id="map-holder">
     <a href='#' id='locate-me' class='button'>Locate Me</a>
     <div id='map'></div>
   </div>
 </div>
-<div class="row">
 </div>
 
 <script>

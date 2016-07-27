@@ -1,15 +1,17 @@
-<h2><%= @fish.name %></h2>
-<h4><%= @fish.description %></h4>
-<% if !@fish.fish_photo.file.nil? %>
+<div class="callout primary">
+  <h2 class="header-title"><%= @fish.name %></h2>
+  <h4><%= @fish.description %></h4>
+  <% if !@fish.fish_photo.file.nil? %>
   <div class="fish-photo">
     <%= image_tag @fish.fish_photo %>
   </div>
-<% end %>
-
-<% if @lures_for_fish == 0 %>
-  <h4>No lures have reportedly caught this fish, go catch one!</h4>
-<% else %>
-  <% @lures_for_fish.each do |lure, count| %>
-    <h5><%= link_to lure.name, lure_path(lure) %></h5>
   <% end %>
-<% end %>
+
+  <% if @lures_for_fish == 0 %>
+  <h4>No lures have been reported catching this fish, go catch one!</h4>
+  <% else %>
+  <% @lures_for_fish.each do |lure, count| %>
+  <h5><%= link_to lure.name, lure_path(lure) %></h5>
+  <% end %>
+  <% end %>
+</div>
