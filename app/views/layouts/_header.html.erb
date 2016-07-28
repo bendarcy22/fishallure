@@ -1,21 +1,24 @@
+<div class="top-bar" id="navigation">
   <div class="top-bar-left">
-    <ul class="dropdown-menu" data-options="align:left" data-dropdown-menu>
+    <ul class="menu">
+      <li>
+        <div id="trout-image">
+          <%= image_tag("rising-trout.png") %>
+        </div>
+      </li>
       <li class="menu-text" id="title-nav">
         <%= link_to "FishAllure", root_path %>
       </li>
-    </ul>
-  </div>
-  <div class="top-bar-section">
-    <ul class="menu">
       <li class="nav-buttons"><%= link_to "Report your Catch", new_catch_path %></li>
     </ul>
   </div>
   <div class="top-bar-right">
     <ul class="dropdown-menu" data-dropdown-menu>
       <% if user_signed_in? %>
-      <li class="menu-text"><%= link_to current_user.username, edit_user_registration_path %>
+      <li class="nav-buttons" id="profile-nav"><%= link_to current_user.username, edit_user_registration_path %>
         <ul class="menu">
           <li class="nav-buttons"><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></li>
+          <li class="nav-buttons"><%= link_to "My Catches", personal_catches_path %></li>
         </ul>
       </li>
       <% else %>
@@ -23,4 +26,5 @@
       <% end %>
     </ul>
   </div>
+</div>
 <br>

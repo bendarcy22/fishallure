@@ -1,7 +1,7 @@
 <div class="callout">
 <h2 class="header-title">All Catches</h2>
   <div class="row">
-    <div class="small-6 columns">
+    <div class="large-6 small-11 columns">
       <% @catches.each do |c| %>
         <ul>
           <li><%= link_to c.caught_at.strftime("Caught on %m/%d/%Y"), catch_path(c) %></li>
@@ -10,11 +10,13 @@
             <li><%= link_to c.fish_type.name, fish_type_path(c.fish_type) %></li>
           </ul>
         </ul>
+        <br>
         <% end %>
       </div>
-    <div class="small-6 columns" id="map-holder">
+    <div class="large-6 small-11 small-centered columns" id="map-holder">
       <a href='#' id='locate-me' class='button'>Locate Me</a>
-      <div id='map'></div>
+      <div id='map' class="large-12 small-12 small-centered columns"></div>
+
       <script type="text/javascript">
         drawIndexCatchMap();
       </script>

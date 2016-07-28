@@ -29,6 +29,6 @@ function drawMap() {
 function drawShowCatchMap(catchLat, catchLng){
   drawMap();
   marker = L.marker(new L.LatLng(catchLat, catchLng));
-  map.setView(new L.LatLng(catchLat, catchLng), 11)
+  map.setView(new L.LatLng(catchLat, catchLng), 10);
   marker.addTo(map);
 }

@@ -3,4 +3,8 @@ class Api::CatchesController < ApiController
     catches = Catch.all
     render json: { catches: catches }, status: :ok
   end
+  def personal
+    catches = Catch.where("user": current_user)
+    render json: { catches: catches }, status: :ok
+  end
 end

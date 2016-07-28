@@ -21,6 +21,10 @@ class CatchesController < ApplicationController
     end
   end
 
+  def personal
+    @catches = Catch.where("user": current_user)
+  end
+
   def index
     @catches = Catch.all
   end
