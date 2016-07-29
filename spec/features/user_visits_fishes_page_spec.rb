@@ -64,4 +64,15 @@ feature "user views Fish page" do
     expect(page).to_not have_content('Albacore', count: 1)
     expect('Striped Bass').to appear_before('Bluefish')
   end
+  scenario "user searches unsuccessfully" do
+    visit root_path
+    click_button "Fish"
+    within(:css, "#fish-type-dropdown") do
+      fill_in 'Lure', with: 'Not Gonna Work'
+    end
+    click_button "Search Fish"
+
+    expect(page).to have_content "Fish"
+    expect(page).to have_content "Sorry, there are no reported fish matching your search request: Not Gonna Work"
+  end
 end

@@ -11,16 +11,19 @@ class LuresController < ApplicationController
       if @fish.present?
         @search = params["f"]
         @catches = Catch.where("fish_type": @fish)
+        @lures = Hash.new(0)
+        @catches.each { |c| @lures[c.lure] += 1 }
+        @hottest_lures = @lures.sort_by { |_k, v| v }.reverse
       else
         @search = params["f"]
-        render :recent
+        render :hot
       end
     else
       @catches = Catch.all
+      @lures = Hash.new(0)
+      @catches.each { |c| @lures[c.lure] += 1 }
+      @hottest_lures = @lures.sort_by { |_k, v| v }.reverse
     end
-    @lures = Hash.new(0)
-    @catches.each { |c| @lures[c.lure] += 1 }
-    @hottest_lures = @lures.sort_by { |_k, v| v }.reverse
   end
 
   def show

@@ -67,6 +67,17 @@ feature "user views catches page" do
     expect(page).to_not have_link(catch_2.lure.name)
     expect(page).to_not have_link(catch_2.fish_type.name)
   end
+  scenario "user searches unsuccessfully by fish" do
+    visit root_path
+    click_button "Recent Catches"
+    within(:css, "#catches-dropdown") do
+      fill_in 'Fish', with: 'Not Gonna Work'
+    end
+    click_button "Search Recent Catches"
+
+    expect(page).to have_content "Most Recent Catches"
+    expect(page).to have_content "Sorry, there are no reported catches matching your search request: Not Gonna Work"
+  end
   scenario "user searches by lure" do
     visit root_path
     click_button "Recent Catches"
@@ -83,5 +94,16 @@ feature "user views catches page" do
     expect(page).to_not have_link(catch_2.caught_at.strftime("Caught on %m/%d/%Y"))
     expect(page).to_not have_link(catch_2.lure.name)
     expect(page).to_not have_link(catch_2.fish_type.name)
+  end
+  scenario "user searches unsuccessfully by lure" do
+    visit root_path
+    click_button "Recent Catches"
+    within(:css, "#catches-dropdown") do
+      fill_in 'Lure', with: 'Not Gonna Work'
+    end
+    click_button "Search Recent Catches"
+
+    expect(page).to have_content "Most Recent Catches"
+    expect(page).to have_content "Sorry, there are no reported catches matching your search request: Not Gonna Work"
   end
 end

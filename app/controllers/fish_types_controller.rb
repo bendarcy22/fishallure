@@ -10,16 +10,19 @@ class FishTypesController < ApplicationController
       if @lure.present?
         @search = params["l"]
         @catches = Catch.where("lure": @lure)
+        @fishes = Hash.new(0)
+        @catches.each { |c| @fishes[c.fish_type] += 1 }
+        @hottest_fishes = @fishes.sort_by { |_k, v| v }.reverse
       else
         @search = params["l"]
         render :hot
       end
     else
       @catches = Catch.all
+      @fishes = Hash.new(0)
+      @catches.each { |c| @fishes[c.fish_type] += 1 }
+      @hottest_fishes = @fishes.sort_by { |_k, v| v }.reverse
     end
-    @fishes = Hash.new(0)
-    @catches.each { |c| @fishes[c.fish_type] += 1 }
-    @hottest_fishes = @fishes.sort_by { |_k, v| v }.reverse
   end
 
   def show

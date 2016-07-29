@@ -57,10 +57,20 @@ feature "user views Hot Lures page" do
       fill_in 'Fish', with: 'Striped'
     end
     click_button "Search Hot Lures"
-    expect(page).to have_content "These lures matched your search by fish: Striped"
     expect(page).to have_content "Recent Hot Lures"
+    expect(page).to have_content "These lures matched your search by fish: Striped"
     expect(page).to have_content('BadLure', count: 1)
     expect(page).to_not have_content('BestLure')
     expect(page).to_not have_content('OkayLure')
+  end
+  scenario "user searches unsuccessfully" do
+    visit root_path
+    click_button "Lures"
+    within(:css, "#lures-dropdown") do
+      fill_in 'Fish', with: 'Not Gonna Work'
+    end
+    click_button "Search Hot Lures"
+    expect(page).to have_content "Recent Hot Lures"
+    expect(page).to have_content "Sorry, there are no reported lures matching your search request: Not Gonna Work"
   end
 end
