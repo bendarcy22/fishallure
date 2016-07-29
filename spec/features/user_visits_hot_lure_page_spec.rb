@@ -50,13 +50,14 @@ feature "user views Hot Lures page" do
     expect(page).to have_content('OkayLure', count: 1)
     expect(page).to have_content('BadLure', count: 1)
   end
-  scenario "user inputs nothing into form" do
+  scenario "user searches form by fish type" do
     visit root_path
     click_button "Lures"
     within(:css, "#lures-dropdown") do
       fill_in 'Fish', with: 'Striped'
     end
     click_button "Search Hot Lures"
+    expect(page).to have_content "These lures matched your search by fish: Striped"
     expect(page).to have_content "Recent Hot Lures"
     expect(page).to have_content('BadLure', count: 1)
     expect(page).to_not have_content('BestLure')

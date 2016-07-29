@@ -49,7 +49,7 @@ feature "user views Fish page" do
     expect('Albacore').to appear_before('Striped Bass')
     expect('Striped Bass').to appear_before('Bluefish')
   end
-  scenario "user searches by fish type" do
+  scenario "user searches by lure" do
     visit root_path
     click_button "Fish"
     within(:css, "#fish-type-dropdown") do
@@ -58,6 +58,7 @@ feature "user views Fish page" do
     click_button "Search Fish"
 
     expect(page).to have_content "Fish"
+    expect(page).to have_content "These Fish matched your search by lure: Pintail"
     expect(page).to have_content('Striped Bass', count: 1)
     expect(page).to have_content('Bluefish', count: 1)
     expect(page).to_not have_content('Albacore', count: 1)

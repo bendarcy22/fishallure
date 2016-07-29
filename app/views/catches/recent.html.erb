@@ -1,10 +1,11 @@
 <div class="callout">
   <h2 class="header-title">Most Recent Catches</h2>
   <div class="row">
-    <div class="large-6 small-11 columns">
+    <div class="large-6 small-11 small-centered columns">
       <% if @catches.nil? %>
-      <h5>Sorry, there are no reported catches matching your search request</h5>
+      <h5>Sorry, there are no reported catches matching your search request: <%= @search %></h5>
       <% else %>
+      <h4>These catches matched your search request: <%= @search %> </h4>
         <% @catches.each do |c| %>
           <ul>
             <li><%= link_to c.caught_at.strftime("Caught on %m/%d/%Y"), catch_path(c) %></li>

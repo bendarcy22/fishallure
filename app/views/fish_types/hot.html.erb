@@ -2,8 +2,9 @@
 <h2 class="header-title">Caught Fish</h2>
   <ul>
     <% if @hottest_fishes.nil? %>
-    <h5>Sorry, there are no reported fish matching your search request</h5>
+    <h5>Sorry, there are no reported fish matching your search request: <%= @search %></h5>
     <% else %>
+    <h4>These Fish matched your search by lure: <%= @search %> </h4>
       <% @hottest_fishes.each do |fish, count| %>
       <li>
         <%= link_to fish.name, fish_type_path(fish) %>

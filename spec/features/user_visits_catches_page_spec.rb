@@ -59,6 +59,7 @@ feature "user views catches page" do
     end
     click_button "Search Recent Catches"
     expect(page).to have_content "Most Recent Catches"
+    expect(page).to have_content "These catches matched your search request: Striped"
     expect(page).to have_link(catch_1.caught_at.strftime("Caught on %m/%d/%Y"))
     expect(page).to have_link(catch_1.lure.name)
     expect(page).to have_link(catch_1.fish_type.name)
@@ -75,6 +76,7 @@ feature "user views catches page" do
     click_button "Search Recent Catches"
 
     expect(page).to have_content "Most Recent Catches"
+    expect(page).to have_content "These catches matched your search request: White"
     expect(page).to have_link(catch_1.caught_at.strftime("Caught on %m/%d/%Y"))
     expect(page).to have_link(catch_1.lure.name)
     expect(page).to have_link(catch_1.fish_type.name)
