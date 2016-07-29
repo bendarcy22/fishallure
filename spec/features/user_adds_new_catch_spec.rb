@@ -28,7 +28,7 @@ feature "user attempts to add new catch" do
     select "BestLure", from: "Lure"
     fill_in "Latitude", with: "0"
     fill_in "Longitude", with: "0"
-    fill_in "Caught at", with: "2016/01/01"
+    fill_in "Caught on", with: "2016/01/01"
     attach_file "Add a picture of your catch!", "#{Rails.root}/spec/support/images/photo.png"
     click_button("Report it!")
 

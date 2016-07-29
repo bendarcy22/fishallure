@@ -11,10 +11,13 @@ body {
   z-index: 0
 }
 
+#trout-image {
+  height: 30;
+  width: 30;
+}
+
 #button-group {
-  position: absolute;
-  margin-left: 10px;
-  left: 0;
+  text-align: center;
 }
 
 .columns {
@@ -24,21 +27,31 @@ body {
 #map {
   margin: 20px;
   display: inline-block;
-  height: 550px;
-  width: 550px;
+  height: 500px;
+  width: 500px;
   top: 0;
-}
+  text-align: center;
 
-.header-title {
-  margin-left: 35%;
+  @media only screen and (max-width: 1150px) {
+   height: 350px;
+   width: 350px;
+ }
+  @media only screen and (max-width: 600px) {
+   height: 275px;
+   width: 275px;
+ }
 }
 
 #map-holder {
   position: relative;
+  float:left;
 }
 
 .callout {
   opacity: .9;
+  ul {
+    margin: 0;
+  }
 }
 
 #locate-me {
@@ -52,6 +65,11 @@ body {
 }
 
 #title-nav {
+  margin: 20px 20px;
+  font-size: 32px;
+}
+
+#profile-nav {
   font-size: 24px;
 }
 
@@ -59,26 +77,17 @@ ul {
   list-style: none;
 }
 
+.navigation-bar {
+  color: #ECBA09;
+}
+
 #catches-menu {
   display: inline-block;
 }
 
-.top-bar-section {
-  width: 75%;
-  padding-left: 450px;
-  font-family: "Rock Salt"
-
-}
-
-.top-bar-right {
-  position: relative;
-  bottom: 40px;
-  font-family: "Rock Salt"
-
-}
-
-.top-bar-left {
-  font-family: "Rock Salt"
+.top-bar {
+  background-color: rgba(white, 0.5);
+  color: $primary-color;
 }
 
 #title {

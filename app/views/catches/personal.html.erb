@@ -1,9 +1,9 @@
 <div class="callout">
-  <h2 class="header-title">Most Recent Catches</h2>
+  <h2 class="header-title">Your Catches</h2>
   <div class="row">
     <div class="large-6 small-11 columns">
-      <% if @catches.nil? %>
-      <h5>Sorry, there are no reported catches matching your search request</h5>
+      <% if @catches.length == 0 %>
+      <h4>You haven't reported any Catches yet!</h4>
       <% else %>
         <% @catches.each do |c| %>
           <ul>
@@ -22,7 +22,7 @@
       <div id='map' class="large-12 small-12 small-centered columns"></div>
 
       <script type="text/javascript">
-        drawIndexCatchMap();
+        drawPersonalCatchMap();
       </script>
     </div>
   </div>

@@ -4,12 +4,19 @@ Rails.application.routes.draw do
   resources :homepage, only: [:index]
 
   namespace :api do
-    resources :catches, only: [:index, :show]
+    resources :catches, only: [:index] do
+      collection do
+        get 'personal'
+      end
+    end
   end
 
   resources :catches do
     collection do
       get 'recent'
+    end
+    collection do
+      get 'personal'
     end
   end
 
