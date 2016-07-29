@@ -1,7 +1,7 @@
 <div class="callout">
 <h2 class="header-title">Catch #<%= @catch.id %></h2>
   <div class="row">
-    <div class="small-3 columns">
+    <div class="large-6 small-11 columns">
       <div class="user-info">
         <ul>
           <li>Caught by: <%= @catch.user.username %></li>
@@ -44,7 +44,7 @@
 
     </div>
 
-    <div class="small-6 columns">
+    <div class="large-6 small-11 small-centered columns" id="map-holder">
       <div id="map"></div>
       <script>
       $(document).ready(function () {

@@ -8,8 +8,10 @@ class FishTypesController < ApplicationController
     if params["l"].present?
       @lure = Lure.where("name ILIKE ?", "%#{params[:l]}%")
       if @lure.present?
+        @search = params["l"]
         @catches = Catch.where("lure": @lure)
       else
+        @search = params["l"]
         render :hot
       end
     else
