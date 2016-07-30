@@ -3,7 +3,7 @@
   <div>
     <%= form_for @catch do |f| %>
   <div class="row">
-    <div class="large-6 small-11 columns">
+    <div class="large-6 small-12 columns">
       <div class="small-6 columns">
         <%= f.label :lure, "Lure" %>
         <%= f.select(:lure, Lure.all.collect {|lure| [ lure.name, lure.id ] }, :prompt => "Select a Lure") %>
@@ -34,7 +34,7 @@
       <%= f.submit "Update Catch", id: "add-catch"%>
       <% end %>
     </div>
-    <div class="large-6 small-11 columns" id="map-holder">
+    <div class="large-6 small-12 columns" id="map-holder">
       <a href='#' id='locate-me' class='button'>Locate Me</a>
       <div id='map'></div>
     </div>

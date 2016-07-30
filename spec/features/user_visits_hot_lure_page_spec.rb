@@ -58,7 +58,7 @@ feature "user views Hot Lures page" do
     end
     click_button "Search Hot Lures"
     expect(page).to have_content "Recent Hot Lures"
-    expect(page).to have_content "These lures matched your search by fish: Striped"
+    expect(page).to have_content "These lures matched your search: Striped"
     expect(page).to have_content('BadLure', count: 1)
     expect(page).to_not have_content('BestLure')
     expect(page).to_not have_content('OkayLure')

@@ -4,7 +4,7 @@
     <% if @hottest_fishes.nil? %>
     <h5>Sorry, there are no reported fish matching your search request: <%= @search %></h5>
     <% else %>
-    <h4>These Fish matched your search by lure: <%= @search %> </h4>
+    <h4>These Fish matched your search: <%= @search %> </h4>
       <% @hottest_fishes.each do |fish, count| %>
       <li>
         <%= link_to fish.name, fish_type_path(fish) %>
