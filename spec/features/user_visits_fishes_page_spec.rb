@@ -58,7 +58,7 @@ feature "user views Fish page" do
     click_button "Search Fish"
 
     expect(page).to have_content "Fish"
-    expect(page).to have_content "These Fish matched your search by lure: Pintail"
+    expect(page).to have_content "These Fish matched your search: Pintail"
     expect(page).to have_content('Striped Bass', count: 1)
     expect(page).to have_content('Bluefish', count: 1)
     expect(page).to_not have_content('Albacore', count: 1)
