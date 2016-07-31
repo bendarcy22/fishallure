@@ -1,14 +1,5 @@
 require 'rails_helper'
 
-# Feature 2:
-#   As an unauthorized user
-#   I want to see an individual catch
-#   So I can find out more information about how the fish was caught
-#
-#   Happy Path:
-#     [X] I can click on a link for a specific catch from the list of catches
-#     [X] I am brought to a page that shows what fish was caught, what lure was used, who caught the fish, what day/time they caught the fish, a picture of the fish(if available) and any other optional information they might have reported
-
 feature "user visits an individual catch page" do
   let!(:catch_1) { create :catch }
   let!(:catch_2) { create :catch }
