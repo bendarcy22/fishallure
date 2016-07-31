@@ -1,4 +1,5 @@
 require 'rails_helper'
+
 feature "user deletes catch" do
   let!(:lure_1) { create :lure, name: "BestLure" }
   let!(:fish_1) { create :fish_type, name: "Striped Bass" }

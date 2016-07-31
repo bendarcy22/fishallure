@@ -1,21 +1,5 @@
 require 'rails_helper'
 
-# Feature 4:
-#   As an unauthorized user
-#   I want to see all the fish that have been caught recently
-#   So I can see what fish I can catch right now
-#
-#   Happy Path:
-#     [X] On the home page there is a link to "Fish Near Me"
-#     [ ] The link takes me to a form where I can optionally put in my zip code
-#     [ ] Providing a zip code that has information associated with it takes me to a page with all the different fish that have been caught in the past week near that zip code
-#     [ ] If I don't provide a zip code I am shown all of the different fish caught over the past week
-#     [X] The page shows the fish in order of most caught over the past week
-#     [X] The fish are all links to the individual fish's page
-#
-#   Unhappy Path:
-#     [ ] If I provide a zip code inaccurately, I am shown an error message and given the form again
-#     [ ] If I provide a zip code that doesn't have any reported catches near it, I am given a warning that the zip code I entered doesn't have any reported catches and I am being redirected to the nearest zip code that does have reported catches
 feature "user views Fish page" do
   let!(:lure_1) { create :lure, name: "White Pintail" }
   let!(:fish_1) { create :fish_type, name: "Striped Bass" }
