@@ -1,20 +1,35 @@
 <div class="callout">
-  <h2 class="header-title"><%= @fish.name %></h2>
-  <% if @fish.description.present? %>
-    <h4>Description:<%= @fish.description %></h4>
-  <% end %>
-  <% if !@fish.fish_photo.file.nil? %>
-  <div class="fish-photo">
-    <%= image_tag @fish.fish_photo %>
-  </div>
-  <% end %>
+  <div class="row">
+    <div class="catch large-6 small-12 columns">
+      <h2 class="header-title"><%= @fish.name %></h2>
+      <% if @fish.description.present? %>
+      <h4>Description:<%= @fish.description %></h4>
+      <% end %>
+      <% if !@fish.fish_photo.file.nil? %>
+      <div class="fish-photo">
+        <%= image_tag @fish.fish_photo %>
+      </div>
+      <% end %>
 
-  <% if @lures_for_fish == 0 %>
-  <h4>No lures have been reported catching this fish, go catch one!</h4>
-  <% else %>
-  <h3>Lures that have caught this fish:</h3>
-  <% @lures_for_fish.each do |lure, count| %>
-  <h5><%= link_to lure.name, lure_path(lure) %></h5>
-  <% end %>
-  <% end %>
+      <% if @lures_for_fish == 0 %>
+      <h4>No lures have been reported catching this fish, go catch one!</h4>
+      <% else %>
+      <h3>Lures that have caught this fish:</h3>
+      <% @lures_for_fish.each do |lure, count| %>
+      <h5>Caught on <%= link_to lure.name, lure_path(lure) %> <%= count %> time(s)</h5>
+      <% end %>
+      <% end %>
+    </div>
+    <div class="large-6 small-12 small-centered columns" id="map-holder">
+      <a href='#' id='locate-me' class='button'>Locate Me</a>
+      <div id='map' class="large-12 small-12 small-centered columns"></div>
+      <%= content_tag "div", id: "fish_id", data: {id: @fish.id} do %>
+      <% end %>
+      <script type="text/javascript">
+      $(document).ready(function () {
+        drawFishTrackerMap();
+      });
+      </script>
+    </div>
+  </div>
 </div>
