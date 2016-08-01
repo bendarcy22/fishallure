@@ -1,5 +1,5 @@
 <div class="callout">
-  <h1>All Fish</h1> 
+  <h1>All Fish</h1>
   <ul>
     <% @fishes.each do |fish| %>
     <li><%= link_to fish.name, fish_type_path(fish) %></li>

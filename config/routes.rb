@@ -9,6 +9,7 @@ Rails.application.routes.draw do
         get 'personal'
       end
     end
+    resources :fish_types, only: [:show]
   end
 
   resources :catches do
