@@ -16,7 +16,10 @@ I've always wanted to be able to track important fishing information, such as wh
 ## Download
 ------
 
-```git clone https://github.com/bendarcy22/fishallure.git
-cd fishallure
-bundle install
-rake db:create db:migrate```
+```git clone https://github.com/bendarcy22/fishallure.git```
+
+```cd fishallure```
+
+```bundle install```
+
+```rake db:create db:migrate```
